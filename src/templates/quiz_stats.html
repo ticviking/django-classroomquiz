@@ -1,0 +1,16 @@
+{% extends "base.djhtml" %}
+
+
+{% block board %}
+  <h1> Statistics for {{quiz}} </h1>
+  <ol>
+    {%for question in question_list%}
+      <li> {{question.question}}
+        <ul>
+          <li>Difficulty - {{question.difficulty}}</li>
+          <li>Item Discrimination Index - {{question.discriminator}}</li>
+        </ul>
+      </li>
+  {%endfor%}
+  </ol>
+{%endblock%}

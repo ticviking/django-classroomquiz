@@ -1,0 +1,15 @@
+{% extends "base.djhtml" %}
+
+{% block board %}
+  <h2> {{request.user}} here are your results for the Quiz: </h2>
+  <h3> {{quiz.name}} </h3>
+  <p> You received {{attempt.score}} out of {{quiz.possible}} possible points.</p>
+  <!-- TODO: nifty jquery to allow picking expanding a detail list -->
+  <ul>Here is a list of the questions you missed
+    {% for q in question_attempts %}
+      {% if not q.response.is_correct %}
+        <li> {{q.question}} </li>
+      {%endif%}
+    {%endfor%}
+  </ul>
+{%endblock%}

@@ -1,0 +1,9 @@
+{% extends "base.djhtml" %}
+
+
+{% block board %}
+  
+  <h1 class="error">Error: you do not have permission to do that</h1>
+  <p>You do not have permission to {{action}}.</p>
+  <p>You are logged in as {{user.username}}. If you feel you have received this message in error, please contact the adminstrator for help.</p>
+{%endblock%}

@@ -1,0 +1,10 @@
+{% extends "base.djhtml" %}
+
+{% block board %}
+<h1>{{quiz.name}}</h1>
+<form action="" method="POST">{%csrf_token%}
+  {{form}}
+  <input type="submit" value="Submit" />
+</form>
+
+{%endblock%}

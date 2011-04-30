@@ -1,0 +1,22 @@
+{% extends "base.djhtml" %}
+
+
+{% block board %}
+  <h1> Welcome to the Quizengine v0.01 </h1>
+  {% if user.is_anonymous%}
+    <p> Welcome to the quiz engine, if you would like to take a quiz please <a href="/accounts/login/">login</a> or <a href="/accounts/register/">register</a> to take or create quizzes!
+  {%endif%}
+  <ul><p>The 5 most recent quizzes</p>
+    {% for quiz in latest_quizzes %}
+      <li><a href="/quiz/{{quiz.pk}}/">{{quiz.name}}</a></li>
+    {%endfor%}
+  </ul>
+  <ul>
+    <p>Welcome back {{user.username}}, your five most recent quizzes are listed below.</p>
+    {% if my_quizzes %}
+      {% for quiz in my_quizzes %}
+        <li> {{quiz.name}} - <a href="/quiz/{{quiz.pk}}/stats/">See Statistics</a> - {{quiz.creation}}</li>
+        {%endfor%}{%endif%}
+        <li><a href="/quiz/add/">Create a new quiz</a></li>
+  </ul>
+{%endblock%}

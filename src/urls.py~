@@ -1,0 +1,12 @@
+from django.conf.urls.defaults import *
+
+
+urlpatterns = patterns ('quizengine.views',
+                        #(r'^$', 'index'),
+                        (r'^(?P<quiz_id>\d+)/$', 'detail'),
+                        (r'^(?p<quiz_id>\d+)/results/(?P<attempt_id>\d+)/',
+                         'results'),
+                        #(r'^(?p<quiz_id>\d+)/stats/$', 'quiz_stat'),
+                        (r'^add/$', 'add_quiz'),
+                        (r'^(?P<quiz_id>\d+)/add/$', 'add_question'),
+                        )#TODO: Edit Questions, List all my quizzes

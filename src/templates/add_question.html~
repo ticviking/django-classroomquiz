@@ -1,0 +1,15 @@
+{%extends 'base.djhtml'%}
+
+{% block board %}
+  {% if prev_question %}
+    <h2>{{question.quetion}} added successfuly!</h2>
+    <!-- Display the previous question and a link to edit if errors -->
+  {%endif%}
+  <h1> Add a question to </h1>
+  <h2> Quiz "{{ quiz.name }}" </h2>
+  <form action="" method="POST">{% csrf_token %}
+    {{form.as_ul}}
+    <input type="submit" value="Add a new question" />
+  </form>
+  <a href="/quiz/">Finished Adding Questions</a>
+{%endblock%}
