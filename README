@@ -1,6 +1,27 @@
 django-classroom quiz is an application I built for my Senior Thesis in education at Utah State University. The code as it stands now is a mess, and is still deeply embedded with the orginal django project(which contains code I do not want to release to the wild) 
 
-This version is available under the terms of the MIT licence. Please note though that my long term intent will likely be to re-licence this and move this to a copyleft licence in general, but with some more permissive terms that are favorable to schools, over companies selling hosting/services to schools.
+installation
+============
+The basic application should install like any other django app:
+* copy the 'django-classroomquiz/' directory into the project folder
+* add "django-classroomquiz" to installed apps in settings.py
+* add a line to urls.py to make the app visible.
+  - something like "(R'^quiz/', include('django-classroomquiz.urls')" should behave sanely).
+Usage
+=====
+Any user can create a quiz by going to "yoursite.com/quiz/add/" Web form should be fairly straitforward, enter a question, a number of possible multiple choice answers and check which answer, or answers you are willing to accept as correct. 
+
+Roadmap
+=======
+-Incorporate Classes, Students and Instructors with seperate privledges
+-Improve front end interface for quiz addding and editing
+-Add the Item Distractor Analysis to stats
+-Provide a more interactive and meaningful statistics analysis
+-Additional Item Types(short response etc)
+-Teacher Grading Override(this is basically nessicary if we want to include any kind of free response question, because a small match problem would equal missed points for a student)
+
+Licence
+=================
 
 Copyright (C) 2011 by Andrew Hamblin
 
@@ -21,4 +42,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
 
