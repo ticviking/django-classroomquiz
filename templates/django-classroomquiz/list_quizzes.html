@@ -1,7 +1,7 @@
 {% extends "base.djhtml" %}
 
 
-{% block board %}
+{% block content %}
   <h1> Welcome to the Quizengine v0.01 </h1>
   {% if user.is_anonymous%}
     <p> Welcome to the quiz engine, if you would like to take a quiz please <a href="/accounts/login/">login</a> or <a href="/accounts/register/">register</a> to take or create quizzes!

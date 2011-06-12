@@ -1,6 +1,6 @@
 {% extends "base.djhtml" %}
 
-{% block board %}
+{% block content %}
   <h2> {{request.user}} here are your results for the Quiz: </h2>
   <h3> {{quiz.name}} </h3>
   <p> You received {{attempt.score}} out of {{quiz.possible}} possible points.</p>
